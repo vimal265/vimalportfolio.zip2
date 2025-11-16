@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="box">
+    <h2>Login</h2>
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="password" id="pass" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+    <p class="msg" id="msg"></p>
+</div>
+<script>
+    let correctName = "Vimal Jayntibhai Ode";
+    let correctPass = "rssb543";
+
+    function login() {
+        let name = document.getElementById("name").value;
+        let pass = document.getElementById("pass").value;
+        if(name === correctName && pass === correctPass){
+            document.getElementById("msg").innerText = "Login Successful!";
+            document.getElementById("msg").style.color = "lime";
+            setTimeout(() => { window.location.href = "home.html"; }, 1000);
+        } else {
+            document.getElementById("msg").innerText = "Incorrect name or password!";
+            document.getElementById("msg").style.color = "red";
+        }
+    }
+</script>
+</body>
+</html>

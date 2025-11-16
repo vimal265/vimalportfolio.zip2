@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hospital Management Dashboard</title>
+<link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Hospital Dashboard</h2>
+      <nav>
+        <ul>
+          <li data-section="home" class="active">Home</li>
+          <li data-section="patients">Patients</li>
+          <li data-section="appointments">Appointments</li>
+          <li data-section="doctors">Doctors</li>
+          <li data-section="billing">Billing</li>
+          <li data-section="reports">Reports</li>
+          <li data-section="logout" class="logout">Logout</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div class="welcome">Welcome, <span id="username">User</span></div>
+      </header>
+
+      <section id="home" class="section active">
+        <h3>Overview</h3>
+        <div class="cards">
+          <div class="card">Total Patients<br><strong id="totalPatients">124</strong></div>
+          <div class="card">Today's Appointments<br><strong id="todayAppts">18</strong></div>
+          <div class="card">Pending Bills<br><strong id="pendingBills">7</strong></div>
+        </div>
+      </section>
+
+      <section id="patients" class="section">
+        <h3>Patients</h3>
+        <table class="table">
+          <thead><tr><th>ID</th><th>Name</th><th>Age</th><th>Contact</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>PT001</td><td>Ramesh Kumar</td><td>45</td><td>9876543210</td><td><button class="small">View</button></td></tr>
+            <tr><td>PT002</td><td>Sita Devi</td><td>30</td><td>9123456780</td><td><button class="small">View</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="appointments" class="section">
+        <h3>Appointments</h3>
+        <table class="table">
+          <thead><tr><th>Time</th><th>Patient</th><th>Doctor</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>10:00 AM</td><td>Ramesh Kumar</td><td>Dr. Patel</td><td>Confirmed</td></tr>
+            <tr><td>11:30 AM</td><td>Sita Devi</td><td>Dr. Sharma</td><td>Pending</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="doctors" class="section">
+        <h3>Doctors</h3>
+        <ul class="list">
+          <li>Dr. Patel — Cardiology</li>
+          <li>Dr. Sharma — General Medicine</li>
+        </ul>
+      </section>
+
+      <section id="billing" class="section">
+        <h3>Billing</h3>
+        <p>Pending invoices: <strong>7</strong></p>
+      </section>
+
+      <section id="reports" class="section">
+        <h3>Reports</h3>
+        <p>Generate reports for patients, appointments and billing.</p>
+      </section>
+    </main>
+  </div>
+
+<script>
+  // Read username from URL param ?user=...
+  function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name) || '';
+  }
+  const user = getQueryParam('user');
+  if (user) {
+    document.getElementById('username').textContent = decodeURIComponent(user);
+  }
+
+  // Sidebar navigation
+  const items = document.querySelectorAll('.sidebar nav ul li');
+  const sections = document.querySelectorAll('.section');
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const target = item.dataset.section;
+      if (target === 'logout') {
+        // go back to index.html (login page)
+        window.location.href = 'index.html';
+        return;
+      }
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+
+      sections.forEach(s => {
+        if (s.id === target) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

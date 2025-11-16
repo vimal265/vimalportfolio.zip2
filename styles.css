@@ -1,0 +1,41 @@
+
+body {
+    background: #f0f0f0;
+    font-family: Arial;
+}
+
+.Login {
+    width: 300px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background: #0056b3;
+}
+
+span {
+    font-size: 14px;
+}
