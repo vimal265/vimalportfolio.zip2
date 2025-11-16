@@ -24,3 +24,98 @@ It includes a **login page** and a **portfolio home page**.
 
 ## Folder Structure
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimal's Portfolio Home</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .portfolio-container {
+            width: 80%;
+            max-width: 900px;
+            margin-top: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .header {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+        .project-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .project-list li {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #007bff;
+        }
+        .logout-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .logout-btn:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-container">
+        <div class="header">
+            <h1>Vimal Jayntibhai Ode</h1>
+            <p>Welcome to my Portfolio Home Page!</p>
+        </div>
+
+        <h2>About Me</h2>
+        <p>
+            This page represents the successful login to my personal portfolio. Here you can find details about the projects I have worked on, my skills, and contact information.
+        </p>
+
+        <h2>My Projects</h2>
+        <ul class="project-list">
+            <li>
+                <strong>Hospital Management Dashboard:</strong> A front-end interface built with HTML, CSS, and basic JavaScript for managing patients, appointments, and billing.
+            </li>
+            <li>
+                <strong>Simple Login System:</strong> The login system you just used, demonstrating basic client-side authentication and page redirection.
+            </li>
+            <li>
+                <strong>Project 3 Title:</strong> (Add another project here, perhaps a coding challenge or personal tool).
+            </li>
+        </ul>
+
+        <a href="index.html" class="logout-btn">Logout</a>
+    </div>
+
+</body>
+</html>
